@@ -1,4 +1,4 @@
-AdVantage
+## AdVantage
 =========
 
 A data product that predicts the mobile ad revenue prior to receiving the ad from ad networks.
