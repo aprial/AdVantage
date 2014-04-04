@@ -1,6 +1,7 @@
 ## AdVantage
 ### Overview:
 *A data product that predicts the mobile ad revenue prior to receiving the ad from ad networks.
+
 *Using Ad Vantage, mobile apps or ad exchanges can optimize revenue.
 *Advertisers can better understand their targeting demographics, publisher content relevance and user behavior.
 ### Data:
