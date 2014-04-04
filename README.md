@@ -12,5 +12,8 @@ Logs of raw ad tags received from ad networks to classify five targeted revenue 
 * The Classifiers were Random Forest, Logistic Regression (One-vs-All), Naive Bayes (One-vs-All).<br />
 * Tuned Classifiers with Grid Search, conducted Feature Engineering and cross-validation.<br />
 
-### Code in Code Folder.  Some EDA and more project details to come at:<br />
+### Project Details:
+* Code files at:<br />
+[project_code](https://github.com/aprial/AdVantage/tree/master/project_code) 
+* Some Visualization and more project details to come at:<br />
 http://junkateannzhang.herokuapp.com/
