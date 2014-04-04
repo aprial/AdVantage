@@ -9,3 +9,7 @@ The product used raw ad tags received from ad networks to classify five targeted
 
 The Classifiers were Random Forest, Logistic Regression, Naive Bayes.  
 Tuned Classifiers with Grid Search, conducted Feature Engineering and cross-validation.
+
+More details to come at:
+
+http://junkateannzhang.herokuapp.com/
