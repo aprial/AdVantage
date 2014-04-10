@@ -78,38 +78,45 @@ if __name__ == "__main__":
 	##Tune n_estimators, 10, 50, 100, 500, 1000, 2000)
 	##Use MR, EC2, Hadoop or Domino to run.
 
-	n_features = len(X.columns)
-
-	for m in [0.1*n_features, 0.25*n_features, 0.5*n_features, 0.75*n_features, n_features, log(n_features, 2)]
-		for n in [10, 50, 100, 500, 1000, 2000]: #[11, 12, 13]:
-	# print Y_train
-			print 'max_features:', m
-			print 'n_estimators:', n
-			classif_rf = RandomForestClassifier(n_estimators = n, n_jobs = -1, oob_score=True, max_features=n_features)
-			classif_rf.fit(X_train, Y_train)
-		# print classif_rf.predict(X_train)
+	# for m in [0.1*n_features, 0.25*n_features, 0.5*n_features, 0.75*n_features, n_features, log(n_features, 2), sqrt(n_features)]
+	# 	for n in [10, 50, 100, 500, 1000, 2000]: #[11, 12, 13]:
+	#   print Y_train
+	# 		print 'max_features:', m
+	# 		print 'n_estimators:', n
+	# 		classif_rf = RandomForestClassifier(n_estimators = n, n_jobs = -1, oob_score=True, max_features=n_features)
+	# 		classif_rf.fit(X_train, Y_train)
+	#		print classif_rf.predict(X_train)
 	# print 'logistics regression before tune'
-		print classif_rf.score(X_test, Y_test)
-		print 'oob_score:', classif_rf.oob_score_
-		joblib.dump(classif_rf, 'rf_m%s_n%s.pkl'%m, %n)
-		print 'train:', classif_rf.score(X_train, Y_train)
-		print 'test:', classif_rf.score(X_test, Y_test)
-		rf_conf_matrix = metrics.confusion_matrix(Y_test, classif_rf.predict(X_test))
-		print rf_conf_matrix
+		# print classif_rf.score(X_test, Y_test)
+		# print 'oob_score:', classif_rf.oob_score_
+		# joblib.dump(classif_rf, 'rf_m%s_n%s.pkl'%m, %n)
+		# print 'train:', classif_rf.score(X_train, Y_train)
+		# print 'test:', classif_rf.score(X_test, Y_test)
+		# rf_conf_matrix = metrics.confusion_matrix(Y_test, classif_rf.predict(X_test))
+		# print rf_conf_matrix
 	##--
-	# print '0 fine tune'
-	# classif_rf = OneVsRestClassifier(RandomForestClassifier(n_jobs = -1), n_jobs = -1)
-	# # classif_SVM_lr.fit(X_test, Y_test)
-	# parameters = {'estimator__n_estimators':range(10, 110, 10)}
-	# clf = grid_search.GridSearchCV(classif_rf, parameters,cv=5)
-	# clf.fit(X_train, Y_train)
-	# print clf.best_estimator_
-	# print clf.best_score_
-	# print clf.best_params_
+	print '0 fine tune'
+	n_features = len(X.columns)
+	classif_rf = RandomForestClassifier(n_estimators = n, n_jobs = -1, oob_score=True, max_features=n_features)
+	# classif_rf.fit(X_train, Y_train)
+	#[(100, 500, 1000, 2000), [sqrt, log2, 10%-100%]
+	parameters = {'n_estimators':range(10, 50), 'confusion_matrix':range(0.5*n_features, sqrt(n_features))}
+	clf = grid_search.GridSearchCV(classif_rf, parameters,cv=5)
+	clf.fit(X_train, Y_train)
+	print clf.best_estimator_
+	print clf.best_score_
+	print clf.best_params_
 	# rf_conf_matrix = metrics.confusion_matrix(Y_test, clf.predict(X_test))
 	# print rf_conf_matrix
-	# print clf.score(X_test, Y_test)
-	# joblib.dump(clf, 'rf_ft0.pkl')
+	print clf.score(X_test, Y_test)
+	joblib.dump(clf, 'rf_max_features%s_n_estimators%s.pkl'%n_estimators, %max_features)
+	print("Detailed classification report:")
+    print()
+    y_true, y_pred = y_test, clf.predict(X_test)
+    print(classification_report(y_true, y_pred))
+    print()
+
+
 	# n_old = None
 	# counter = 0
 	# while n_old != clf.best_params_['estimator__n_estimators'] and counter < 10:
