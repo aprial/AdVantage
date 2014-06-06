@@ -5,6 +5,10 @@ A machine learning mobile ad monetization optimizer.
 * Using Ad Vantage, mobile apps or ad exchanges can optimize revenue.<br />
 * Advertisers can better understand their targeting demographics, publisher content relevance and user behavior.
 
+### Results:
+
+
+
 ### Data:
 Logs of raw ad tags received from ad networks to classify five targeted revenue buckets.<br />
 
