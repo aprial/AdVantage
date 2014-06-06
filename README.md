@@ -31,5 +31,7 @@ Logs of raw ad tags received from ad networks to classify five targeted revenue 
 ### Project Details:
 * Code files at:<br />
 [project_code](https://github.com/aprial/AdVantage/tree/master/project_code) 
+* Project Presentation:<br />
+[Jun Zhang presso mobile ads.pdf](https://github.com/aprial/AdVantage/blob/master/Jun%20Zhang%20presso%20mobile%20ads.pdf)
 * Some Visualization and more project details to come at:<br />
 http://junkateannzhang.herokuapp.com/
