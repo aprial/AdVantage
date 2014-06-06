@@ -5,7 +5,7 @@ A machine learning mobile ad monetization optimizer.
 * Using Ad Vantage, mobile apps or ad exchanges can optimize revenue.<br />
 * Advertisers can better understand their targeting demographics, publisher content relevance and user behavior.
 
-### Results:
+### Results, Accuracy and Cross-Validation:
 * Prediction accuracy: 79%.<br />
 * Random Forest ROC Plot AUC: 0.85.<br />
 * Logistic Regression ROC Plot AUC: 0.76.<br />
