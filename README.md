@@ -6,8 +6,13 @@ A machine learning mobile ad monetization optimizer.
 * Advertisers can better understand their targeting demographics, publisher content relevance and user behavior.
 
 ### Results:
-
-
+* Prediction accuracy: 79%.<br />
+* Random Forest ROC Plot AUC: 0.85.<br />
+* Logistic Regression ROC Plot AUC: 0.76.<br />
+* Naive Bayes Gaussian AUC: 0.60.<br />
+* Naive Bayes Multinomial AUC: 0.73.<br />
+* Cross-Validation F1 Score Random Forest: 0.89.<br />
+* Revenue Lift from "Random" baseline: 109%.<br />
 
 ### Data:
 Logs of raw ad tags received from ad networks to classify five targeted revenue buckets.<br />
